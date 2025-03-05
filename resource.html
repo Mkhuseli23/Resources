@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources - Digital Resource System</title>
+    <link rel="stylesheet" href="resources.css">
+    <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Digital Resource System</h1>
+        </div>
+        <input type="text" id="searchBar" placeholder="Search for resources..." onkeyup="searchResources()">
+        <div class="header-buttons">
+            <button class="notifications-btn" onclick="toggleNotifications()">🔔</button>
+            <button onclick="window.location.href='login.html'" class="logout-btn">Logout</button>
+        </div>
+        </div>
+    </header>
+
+    <section class="resources">
+        <h2>Resources</h2>
+        <div id="resource-container" class="resource-container"></div>
+    </section>
+
+    <!-- 🔔 Notifications Popup -->
+    <div id="notifications-popup" class="notifications-popup">
+        <div class="popup-content">
+            <span class="close-btn" onclick="toggleNotifications()">&times;</span>
+            <h3>Notifications</h3>
+            <div id="notifications-list">Loading...</div>
+            <button onclick="viewAllNotifications()">View All</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Digital Resource System. All rights reserved.</p>
+    </footer>
+
+    <script type="module" src="firebase.js"></script>
+    <script type="module" src="resources.js"></script>
+    <script>
+        // Toggle Notifications Popup
+        function toggleNotifications() {
+            const popup = document.getElementById("notifications-popup");
+            popup.style.display = popup.style.display === "block" ? "none" : "block";
+            if (popup.style.display === "block") {
+                fetchNotifications();
+            }
+        }
+
+        // Close popup when clicking outside
+        window.onclick = function(event) {
+            const popup = document.getElementById("notifications-popup");
+            if (event.target === popup) {
+                popup.style.display = "none";
+            }
+        }
+
+        // Fetch Notifications (Replace this with actual Firestore fetching)
+        function fetchNotifications() {
+            const notificationsList = document.getElementById("notifications-list");
+            notificationsList.innerHTML = "<p>You have no new notifications.</p>";
+        }
+
+        // Redirect to notifications page
+        function viewAllNotifications() {
+            window.location.href = "notifications.html";
+        }
+    </script>
+
+    <style>
+        /* 🔔 Notifications Button (Round) */
+        .header-buttons {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .notifications-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: none;
+            background: #ffcc00;
+            font-size: 18px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.3s;
+        }
+
+        .notifications-btn:hover {
+            background: #ffaa00;
+        }
+
+        .logout-btn {
+            padding: 8px 15px;
+            background: #ff4444;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .logout-btn:hover {
+            background: #cc0000;
+        }
+
+        /* 🔔 Notifications Popup Styling */
+        .notifications-popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            background: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            z-index: 1000;
+        }
+
+        .popup-content {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+    </style>
+
+</body>
+</html>

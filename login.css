@@ -1,0 +1,168 @@
+/* Background Image */
+body {
+    background-image: url('pic4.png'); /* Replace with your image */
+    background-size: cover; 
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+  }
+  
+  /* Page Layout */
+  .login-page {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Navbar Styling */
+  .navbar {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .navbar .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .navbar nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+  }
+  
+  .navbar nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+  }
+  
+  .navbar .login-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+  }
+  
+  .navbar .login-button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Form Styles */
+  .auth-container {
+    max-width: 400px;
+    margin: auto;
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  /* Input Fields */
+  input {
+    width: 375px;
+    padding: 12px;
+    margin: 12px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    background-color: #f9f9f9;
+    transition: border 0.3s ease-in-out;
+  }
+  
+  input:focus {
+    border-color: #007bff;
+    outline: none;
+    background-color: #fff;
+  }
+  
+  /* Button Styles */
+  button {
+    width: 100%;
+    padding: 14px;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Button Group */
+  .button-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .register-btn, .reset-btn {
+    flex: 1;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    text-align: center;
+  }
+  
+  .register-btn {
+    background-color: #ff7f50;
+    color: white;
+    border: none;
+  }
+  
+  .register-btn:hover {
+    background-color: #e65c00;
+  }
+  
+  .reset-btn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+  }
+  
+  .reset-btn:hover {
+    background-color: #218838;
+  }
+  
+  /* Error Message */
+  .error {
+    color: #721c24;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    padding: 10px;
+    border-radius: 6px;
+    margin-top: 10px;
+  }
+  
+  /* Footer Styling */
+  footer {
+    background: #282c34;
+    color: white;
+    padding: 20px 0;
+    font-size: 0.9rem;
+    text-align: center;
+    margin-top: auto;
+  }
+  

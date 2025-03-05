@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="admindashboard.css">
+</head>
+<body>
+
+<div class="dashboard-container">
+    <!-- Navbar (Header + Menu) -->
+    <div class="navbar">
+        <h2>Admin Dashboard</h2>
+        <nav>
+            <ul>
+                <li><button class="menu-button" onclick="showSection('resources')">Resources</button></li>
+                <li><button class="menu-button" onclick="window.location.href='admin-requests.html'">Requests</button></li>
+                <li><button class="menu-button" onclick="showSection('analytics')">Analytics</button></li>
+                <li><button class="logout-button" onclick="logout()">Logout</button></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="dashboard-main">
+        <h1>Manage Resources</h1>
+        <div class="add-resource">
+            <input type="text" id="title" placeholder="Title">
+            <input type="text" id="description" placeholder="Description">
+            <input type="text" id="fileType" placeholder="File Type (PDF, URL, Video)">
+            <input type="text" id="category" placeholder="Category (Book, Video, etc.)">
+            <button class="btn-primary" onclick="addResource()">Add Resource</button>
+        </div>
+
+        <!-- Display Resources -->
+        <div id="resource-list" class="resource-container"></div>
+    </div>
+</div>
+
+<script type="module" src="admindashboard.js"></script>
+</body>
+</html>

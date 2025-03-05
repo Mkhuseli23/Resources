@@ -1,0 +1,119 @@
+/* General Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    color: white;
+    text-align: center;
+    background-image: url('pic4.png'); /* Background Image */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(40, 44, 52, 0.8); /* Slight transparency */
+    padding: 15px 30px;
+}
+
+.navbar .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+}
+
+/* Login Button */
+.login-button {
+    background-color: #61dafb;
+    color: #20232a;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+    background-color: #4fc3e6;
+}
+
+/* Hero Section */
+.hero {
+    padding: 100px 20px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+/* Hero Buttons */
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.cta-button {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    background-color: #61dafb;
+    color: #20232a;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #4fc3e6;
+}
+
+/* Features Grid */
+.grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 40px 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: rgba(40, 44, 52, 0.9);
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 300px;
+    text-align: left;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h2 {
+    color: white;
+}
+
+.card p {
+    color: #ccc;
+}
+
+/* Footer */
+footer {
+    background: rgba(40, 44, 52, 0.8);
+    color: white;
+    padding: 20px 0;
+    font-size: 0.9rem;
+    text-align: center;
+    margin-top: 40px;
+}

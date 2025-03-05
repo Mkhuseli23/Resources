@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="login.css">
+
+</head>
+<body>
+    <div class="login-page">
+        <!-- Navbar -->
+        <header class="navbar">
+            <div class="logo">CPUT RESOURCE HUB</div>
+            <a href="/login" class="login-button">Login</a>
+        </header>
+
+        <!-- Authentication Form -->
+        <div class="auth-container">
+            <h2>Login</h2>
+            
+            <!-- Error Message -->
+            <p class="error" id="error-message" style="color: red; font-weight: bold;"></p>
+
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Enter your email" required />
+            </div>
+
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter your password" required />
+            </div>
+
+            <button id="login-btn">Login</button>
+
+            <div class="button-group">
+                <!-- Navigate to Reset Password Page -->
+                <button class="reset-btn" onclick="window.location.href='ResetPasswordPage.html'">Forgot Password?</button>
+                
+                <!-- Navigate to Registration Page -->
+                <button class="register-btn" onclick="window.location.href='RegistrationPage.html'">Register</button>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2025 Digital Resource Management. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script type="module">
+        import { auth, db } from "./firebase.js";
+        import { signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
+        import { doc, getDoc } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js";
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const loginButton = document.getElementById("login-btn");
+            const emailInput = document.getElementById("email");
+            const passwordInput = document.getElementById("password");
+            const errorMessage = document.getElementById("error-message");
+
+            if (loginButton) {
+                loginButton.addEventListener("click", function () {
+                    const email = emailInput.value.trim();
+                    const password = passwordInput.value.trim();
+
+                    if (!email || !password) {
+                        errorMessage.textContent = "Please enter both email and password.";
+                        return;
+                    }
+
+                    // Authenticate user
+                    signInWithEmailAndPassword(auth, email, password)
+                        .then(async (userCredential) => {
+                            // Fetch user role from Firestore
+                            const user = userCredential.user;
+                            const userDoc = await getDoc(doc(db, "users", user.uid));
+
+                            if (userDoc.exists()) {
+                                const userData = userDoc.data();
+                                const role = userData.role; // Get the role from Firestore
+
+                                // Redirect based on role
+                                if (role === "admin") {
+                                    window.location.href = "admindashboard.html"; // Admin Dashboard
+                                } else if (role === "student") {
+                                    window.location.href = "resource.html"; // Student Dashboard
+                                } else {
+                                    errorMessage.textContent = "User role not found. Please contact support.";
+                                }
+                            } else {
+                                errorMessage.textContent = "User data not found.";
+                            }
+                        })
+                        .catch((error) => {
+                            errorMessage.textContent = "Invalid email or password. Please try again.";
+                            console.error("Login Error:", error.message);
+                        });
+                });
+            }
+        });
+    </script>  
+    <script type="module" src="firebase.js"></script>
+    <script type="module" src="login.js"></script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
