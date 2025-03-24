@@ -1,0 +1,194 @@
+/* Global Styles */
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('books.jpg'); /* Replace with your image */
+    background-size: cover; 
+}
+
+.signup-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.navbar {
+    background-color: #426380; /* CPUT primary blue */
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .logo {
+    width: 120px; /* Adjust the size of the logo image */
+}
+
+.navbar .logo img {
+    height: 50px; /* Adjusted size for better fit */
+    width: 75px;
+    border-radius: 7px; /* Adjust the value to make the corners rounder */
+    opacity: 1; /* Adjust value between 0 (fully transparent) and 1 (fully opaque) */
+}
+
+.navbar nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+.navbar nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.navbar .login-button {
+    background-color: #00427a; /* CPUT blue */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.navbar .login-button:hover {
+    background-color: #003366;
+}
+
+/* Auth Container */
+.auth-container {
+    width: 380px;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Input Styling */
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 7px;
+    margin-top: 5px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.password-wrapper {
+    position: relative;
+}
+
+.password-strength {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Button Styling */
+button {
+    width: 100%;
+    padding: 14px;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Button Group - Update to place buttons next to each other */
+.button-group {
+    display: flex;
+    justify-content: space-between;  /* Place buttons on opposite sides */
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* Register Button Styling */
+.register-btn {
+    background-color: rgb(173, 139, 139); /* CPUT yellow */
+    color: #00427a; /* CPUT blue */
+    border: none;
+    padding: 14px;
+    width: 48%;  /* Adjust width to fit next to the Login button */
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.register-btn:hover {
+    background-color: #003366;
+}
+
+/* Login Button Styling */
+.login-btn {
+    background-color: #00427a; /* CPUT blue */
+    color: white;
+    border: none;
+    padding: 14px;
+    width: 48%;  /* Adjust width to fit next to the Register button */
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.login-btn:hover {
+    background-color: #003366;
+}
+
+/* Footer Styling */
+footer {
+    background: #426380; /* CPUT blue */
+    color: white;
+    padding: 20px 0;
+    font-size: 0.9rem;
+    text-align: center;
+    margin-top: auto;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 480px) {
+    .auth-container {
+        max-width: 90%;
+    }
+
+    .button-group {
+        flex-direction: column;  /* Stack buttons on small screens */
+    }
+
+    .register-btn, .login-btn {
+        width: 100%;  /* Full width for both buttons */
+    }
+}

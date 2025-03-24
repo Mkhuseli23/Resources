@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CPUT Resource Hub</title>
+    <link rel="stylesheet" href="landingpage.css">
+    <link rel="stylesheet" href="navigations.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <div class="landing-page">
+        <!-- Navbar -->
+        <header class="navbar">
+            <div class="logo">
+                <img src="cput-logo.jpg" alt="CPUT Logo">
+            </div>
+            <button class="login-button" onclick="navigateTo('login.html')">Login</button>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>CPUT Application Development Resource Hub</h1>
+            <p>A streamlined platform for IT Students from CPUT who are doing Application Development.</p>
+            <div class="hero-buttons">
+                <button class="cta-button" onclick="navigateTo('RegistrationPage.html')">Get Started</button>
+            </div>
+        </section>
+        
+        <!-- Features Grid -->
+        <main>
+            <section class="grid">
+                <div class="card">
+                    <h2>AI-Powered Recommendations</h2>
+                    <p>Discover the right resources with smart suggestions tailored to your needs.</p>
+                </div>
+                <div class="card">
+                    <h2>Efficient Management</h2>
+                    <p>Admins can easily approve, reject, and track resource requests.</p>
+                </div>
+                <div class="card">
+                    <h2>Real-time Notifications</h2>
+                    <p>Stay updated on resource availability and approvals instantly.</p>
+                </div>
+            </section>
+        </main>
+        
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2025 Digital Resource Management. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        function navigateTo(page) {
+            window.location.href = page;
+        }
+    </script>
+</body>
+</html>

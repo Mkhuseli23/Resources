@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up</title>
+  <link rel="stylesheet" href="RegistrationPage.css">
+  <link rel="stylesheet" href="navigations.css"> <!-- Link the smooth transition CSS -->
+</head>
+<body>
+  <div class="signup-page">
+    <!-- Navbar -->
+    <header class="navbar">
+      <div class="logo">
+        <img src="cput-logo.jpg" alt="CPUT Resource Hub Logo" class="logo-image"> <!-- Logo as an image -->
+      </div>
+      <a href="login.html" class="login-button navigate" data-target="login.html">Login</a> <!-- Updated with navigate class -->
+    </header>
+
+    <!-- Auth Container -->
+    <div class="auth-container">
+      <h2>Sign Up</h2>
+      <form id="signupForm">
+        <div class="input-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" placeholder="Enter your name" required>
+        </div>
+        <div class="input-group">
+          <label for="surname">Surname</label>
+          <input type="text" id="surname" placeholder="Enter your surname" required>
+        </div>
+        <div class="input-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="Enter your email" required>
+        </div>
+        <div class="input-group">
+          <label for="password">Password</label>
+          <div class="password-wrapper">
+            <input type="password" id="password" oninput="handlePasswordChange(event)" required>
+            <span class="toggle-password" onclick="togglePassword('password')">👁️</span>
+          </div>
+          <div class="password-strength">
+            <span id="passwordStrength"></span>
+          </div>
+        </div>
+        <div class="input-group">
+          <label for="repassword">Re-enter Password</label>
+          <div class="password-wrapper">
+            <input type="password" id="repassword" required>
+            <span class="toggle-password" onclick="togglePassword('repassword')">👁️</span>
+          </div>
+        </div>
+        <div class="button-group">
+          <button type="button" class="register-btn" onclick="registerUser()">Sign Up</button>
+          <button type="button" class="login-btn" onclick="navigateToLogin()">Login</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2025 Digital Resource Management. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <script src="firebase.js"></script>
+  <script type="module" src="RegistrationPage.js"></script>
+
+</body>
+</html>

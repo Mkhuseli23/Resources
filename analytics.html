@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Analytics</title>
+    <script defer src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="analytics.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h2>Admin Dashboard</h2>
+            <button class="menu-button" onclick="window.location.href='admin-dashboard.html'">Resources</button>
+            <button class="menu-button" onclick="window.location.href='requests.html'">Requests</button>
+            <button class="menu-button" onclick="window.location.href='analytics.html'">Analytics</button>
+            <button class="logout-button" onclick="handleLogout()">Logout</button>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-main">
+            <h1>Analytics Dashboard</h1>
+            <div class="analytics-container">
+                <!-- Pie Chart -->
+                <div class="chart-container">
+                    <h2>Resource Types</h2>
+                    <canvas id="resourceTypeChart"></canvas>
+                </div>
+
+                <!-- Bar Chart -->
+                <div class="chart-container">
+                    <h2>Resource Distribution by Category</h2>
+                    <canvas id="categoryChart"></canvas>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="analytics.js"></script>
+</body>
+</html>
